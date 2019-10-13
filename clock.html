@@ -49,7 +49,7 @@ p {
 <div id="clock">
     <p class="date">{{ date }}</p>
     <p class="time">{{ time }}</p>
-    <p class="text">DIGITAL CLOCK with Vue.js</p>
+    <p class="text"></p>
 </div>
 	
 	
@@ -57,24 +57,24 @@ p {
 	var clock = new Vue({
     el: "#clock",
     data: {
-        time: '',
-        date: ''
+        time: "",
+        date: ""
     }
 });
 
-var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+var week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 var timerID = setInterval(updateTime, 1000);
 updateTime();
 function updateTime() {
     var cd = new Date();
-    clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
-    clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
+    clock.time = zeroPadding(cd.getHours(), 2) + ":" + zeroPadding(cd.getMinutes(), 2) + ":" + zeroPadding(cd.getSeconds(), 2);
+    clock.date = zeroPadding(cd.getFullYear(), 4) + "-" + zeroPadding(cd.getMonth()+1, 2) + "-" + zeroPadding(cd.getDate(), 2) + " " + week[cd.getDay()];
 };
 
 function zeroPadding(num, digit) {
-    var zero = '';
+    var zero = "";
     for(var i = 0; i < digit; i++) {
-        zero += '0';
+        zero += "0";
     }
     return (zero + num).slice(-digit);
 }

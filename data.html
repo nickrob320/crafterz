@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <table>
+   <tr>
+    <th>index</th>
+    <th>password</th>
+    </tr>
+    <?php
+    $conn = mysqli_connect("","","");
+    if($conn-> connect_error) {
+      die("Connection failed:". $conn-> connect_error);
+    }
+    ?>
+  </table>
+</body>
+</html>

@@ -21,7 +21,7 @@ if(!empty($password)){
 			echo "Password safe";
 		}
 
-		%conn->close();
+		$conn->close();
 	}
 }else{
 	echo "Password cannot be empty";
